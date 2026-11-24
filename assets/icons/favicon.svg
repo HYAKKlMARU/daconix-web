@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" shape-rendering="geometricPrecision">
+  <rect width="32" height="32" rx="7" fill="#1B173D"/>
+  <path d="M9 19L9 6L13 6L13 19ZM14 6L16.41 6Q18.77 6 20.47 6.79Q22.16 7.59 23.08 9.11Q24 10.51 24 12.5Q24 14.51 23.08 15.9Q22.16 17.41 20.47 18.21Q18.77 19 16.41 19L14 19L14 16L16.19 16Q17.95 16 19.04 15.13Q20.12 14.26 20.12 12.7L20.12 12.28Q20.12 10.74 19.04 9.87Q17.95 9 16.19 9L14 9Z" fill="#F5F3EE"/>
+  <path d="M9 21H24V23H9ZM9 24H24V26H9Z" fill="#E2A93B"/>
+</svg>

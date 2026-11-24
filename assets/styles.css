@@ -84,7 +84,7 @@ section{position:relative}
 .nav__in{display:flex;align-items:center;gap:28px;height:72px}
 .brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em;font-size:1rem}
 .brand b{font-weight:400;margin-left:5px;color:var(--mute)}
-.brand__mark{width:22px;height:24px;color:var(--ink)}
+.brand__mark{width:20px;height:24px;color:var(--ink)}
 .nav__links{display:flex;gap:4px;margin-inline:auto}
 .nav__links a{padding:8px 12px;border-radius:999px;font-size:.9rem;color:var(--ink-2);transition:background .2s,color .2s}
 .nav__links a:hover,.nav__links a.is-on{color:var(--ink);background:rgba(18,19,23,.06)}
@@ -212,7 +212,7 @@ section{position:relative}
 .erp{position:absolute;inset:0;display:grid;grid-template-columns:208px 1fr;background:#F5F4FB;color:#17142E;font-size:13px;line-height:1.45}
 .erp__side{background:#17143A;color:#CFCBEA;padding:16px 12px;display:flex;flex-direction:column;gap:2px}
 .erp__logo{display:flex;align-items:center;gap:9px;padding:4px 8px 16px;color:#fff;font-weight:700;font-size:13px;letter-spacing:.02em}
-.erp__logo i{width:24px;height:24px;border-radius:7px;background:linear-gradient(135deg,#6D5EF5,#4B3DD8);display:grid;place-items:center;font-style:normal;font-size:12px}
+.erp__logo svg{width:18px;height:auto;flex:none}
 .erp__grp{font:600 9.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#7D79A3;padding:12px 10px 5px}
 .erp__nav{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:9px;font-size:12.5px;color:#BDB8DD}
 .erp__nav span{width:16px;text-align:center;opacity:.7;font-size:11px}
