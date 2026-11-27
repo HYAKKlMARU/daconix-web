@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Libro de Reclamaciones · DACONIX OS</title>
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/legal.css">
+</head>
+<body>
+<header class="legal-top"><div class="wrap">
+  <a class="brand" href="index.html"><svg class="brand__mark" viewBox="0 0 115.26 138.92" aria-hidden="true"><path d="M0 100L0 0L29.51 0L29.51 100Z" fill="currentColor"/><path d="M36.92 0L55.81 0Q74.27 0 87.57 5.81Q100.87 11.63 108.07 22.82Q115.26 34.01 115.26 50Q115.26 66.13 108.07 77.25Q100.87 88.37 87.57 94.19Q74.27 100 55.81 100L36.92 100L36.92 78.05L54.07 78.05Q67.88 78.05 76.38 71.08Q84.88 64.1 84.88 51.6L84.88 48.26Q84.88 35.9 76.38 28.92Q67.88 21.95 54.07 21.95L36.92 21.95Z" fill="currentColor"/><path d="M0 114.83H115.26V124.09H0Z M0 129.65H115.26V138.92H0Z" fill="#E2A93B"/></svg><span>DACONIX<b>OS</b></span></a>
+  <a class="btn btn--line btn--sm" href="index.html">Volver al inicio</a>
+</div></header>
+<main class="legal">
+<h1>Libro de Reclamaciones</h1>
+<p class="fecha">Última actualización: 26 de noviembre de 2026</p>
+
+<p>Conforme al Código de Protección y Defensa del Consumidor, este establecimiento cuenta con un Libro de Reclamaciones virtual a tu disposición.</p>
+<p>Proveedor: <span class="dato" data-empresa="razonSocial">[completar: razón social]</span>, con RUC <span class="dato" data-empresa="ruc">[completar: RUC]</span> y domicilio en <span class="dato" data-empresa="domicilio">[completar: domicilio fiscal]</span>.</p>
+<p class="aviso" id="modo" hidden></p>
+<form class="rec" id="rec">
+<fieldset id="f1"><legend>Tus datos</legend>
+<label class="wide">Nombres y apellidos<input name="nombre" required maxlength="100"></label>
+<label>Documento<select name="tipoDoc"><option>DNI</option><option>Carné de extranjería</option><option>Pasaporte</option><option>RUC</option></select></label>
+<label class="">Número de documento<input name="numDoc" required maxlength="15"></label>
+<label class="wide">Domicilio<input name="domicilio" required maxlength="150"></label>
+<label class="">Teléfono<input name="telefono" required type="tel" maxlength="20"></label>
+<label class="">Correo electrónico<input name="correo" required type="email" maxlength="80"></label>
+<label class="wide">Padre, madre o apoderado (solo si eres menor de edad)<input name="apoderado" maxlength="100"></label>
+</fieldset>
+<fieldset id="f2"><legend>Bien contratado</legend>
+<label>Tipo<select name="tipoBien"><option>Servicio</option><option>Producto</option></select></label>
+<label class="">Monto reclamado (S/)<input name="monto" type="number" min="0" step="0.01"></label>
+<label class="wide">Descripción<textarea name="descripcion" required maxlength="500"></textarea></label>
+</fieldset>
+<fieldset id="f3"><legend>Detalle</legend>
+<label class="wide">Tipo<select name="tipo"><option value="Reclamo">Reclamo: disconformidad con el producto o servicio</option><option value="Queja">Queja: malestar por la atención recibida</option></select></label>
+<label class="wide">Qué ocurrió<textarea name="detalle" required maxlength="2000"></textarea></label>
+<label class="wide">Qué pides<textarea name="pedido" required maxlength="1000"></textarea></label>
+<label class="wide ok"><input type="checkbox" name="acepta" required><span>Declaro que los datos son verdaderos y autorizo su tratamiento para atender este reclamo, según la <a href="privacidad.html">política de privacidad</a>.</span></label>
+</fieldset>
+<button class="btn btn--ink btn--lg" id="enviar" type="submit">Registrar</button>
+<p class="aviso" id="estado" role="status" hidden></p>
+</form>
+<div class="hoja" id="hoja" hidden></div>
+<h2>Ten en cuenta</h2>
+<ul>
+<li>El proveedor responde en un plazo máximo de quince (15) días hábiles, improrrogables.</li>
+<li>Registrar un reclamo no impide acudir a otras vías de solución ni es requisito previo para denunciar ante el INDECOPI.</li>
+</ul>
+</main>
+<footer class="bigfoot">
+  <div class="wrap">
+    <a class="bigfoot__brand" href="index.html" aria-label="DACONIX OS, inicio"><svg class="brand__mark" viewBox="0 0 115.26 138.92" aria-hidden="true"><path d="M0 100L0 0L29.51 0L29.51 100Z" fill="currentColor"/><path d="M36.92 0L55.81 0Q74.27 0 87.57 5.81Q100.87 11.63 108.07 22.82Q115.26 34.01 115.26 50Q115.26 66.13 108.07 77.25Q100.87 88.37 87.57 94.19Q74.27 100 55.81 100L36.92 100L36.92 78.05L54.07 78.05Q67.88 78.05 76.38 71.08Q84.88 64.1 84.88 51.6L84.88 48.26Q84.88 35.9 76.38 28.92Q67.88 21.95 54.07 21.95L36.92 21.95Z" fill="currentColor"/><path d="M0 114.83H115.26V124.09H0Z M0 129.65H115.26V138.92H0Z" fill="#E2A93B"/></svg><span>DACONIX <b>OS</b></span></a>
+    <div class="bigfoot__grid">
+      <div><h3>Producto</h3><ul><li><a href="index.html#cine" >Véalo operar</a></li><li><a href="index.html#simulador" >Simulador</a></li><li><a href="index.html#reportes" >Reportes</a></li><li><a href="index.html#modulos" >Módulos</a></li><li><a href="index.html#control" >Control y seguridad</a></li></ul></div>
+      <div><h3>Planes</h3><ul><li><a href="index.html#planes" >Emprende</a></li><li><a href="index.html#planes" >Negocio</a></li><li><a href="index.html#planes" >Empresa</a></li><li><a href="https://daconix-os.onrender.com/login" rel="noopener">Ingresar al sistema</a></li></ul></div>
+      <div><h3>Ayuda</h3><ul><li><a href="index.html#faq" >Preguntas frecuentes</a></li><li><a href="index.html#porque" >Por qué DACONIX</a></li><li><a href="https://wa.me/51999707530?text=Hola%2C%20quiero%20agendar%20una%20demo%20ejecutiva%20de%20DACONIX%20OS." target="_blank" rel="noopener">Agendar demo</a></li><li><a href="https://wa.me/51999707530?text=Hola%2C%20tengo%20una%20consulta%20sobre%20DACONIX%20OS." target="_blank" rel="noopener">Soporte por WhatsApp</a></li></ul></div>
+      <div><h3>Legal</h3><ul><li><a href="terminos.html" >Términos y condiciones</a></li><li><a href="privacidad.html" >Política de privacidad</a></li><li><a href="cookies.html" >Política de cookies</a></li><li><a href="reclamaciones.html" >Libro de Reclamaciones</a></li></ul></div>
+      <div class="bigfoot__about">
+        <p>DACONIX OS es un ERP que une ventas, compras, inventario, caja, bancos y contabilidad sobre los mismos movimientos, en soles.</p>
+        <p><a href="https://wa.me/51999707530?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20DACONIX%20OS." target="_blank" rel="noopener">WhatsApp +51 999 707 530</a></p>
+        <a class="libro" href="reclamaciones.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 5.5c3-1.4 6-1.4 9 .6 3-2 6-2 9-.6v13c-3-1.4-6-1.4-9 .6-3-2-6-2-9-.6z"/><path d="M12 6v13"/></svg>
+          <span>Libro de<br><b>Reclamaciones</b></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="bigfoot__base">
+    <div class="wrap">
+      <p>© 2026 DACONIX OS. <span class="dato" data-empresa="razonSocial">[completar: razón social]</span>, RUC <span class="dato" data-empresa="ruc">[completar: RUC]</span>. Hecho en Lima, Perú.</p>
+      <p>Las pantallas y cifras de este sitio son ilustrativas, con datos de ejemplo.</p>
+    </div>
+  </div>
+</footer>
+<script src="assets/empresa.js"></script>
+<script src="assets/legal.js"></script>
+<script>
+(function () {
+  var e = window.EMPRESA || {}, form = document.getElementById('rec');
+  var local = location.protocol === 'file:' || /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+  var modo = document.getElementById('modo'), estado = document.getElementById('estado');
+  var activo = !!e.reclamosEndpoint;
+  if (!activo) {
+    modo.hidden = false;
+    if (local) modo.textContent = 'Modo de prueba: las hojas no se registran ni se envían. Falta conectar el servidor antes de publicar.';
+    else {
+      modo.textContent = 'El registro en línea no está disponible por el momento. Comunícate por WhatsApp +51 999 707 530 para registrar tu reclamo o queja.';
+      form.querySelectorAll('fieldset, #enviar').forEach(function (n) { n.disabled = true; });
+    }
+  }
+  function fila(t, v) {
+    var dt = document.createElement('dt'), dd = document.createElement('dd');
+    dt.textContent = t; dd.textContent = v || '-'; return [dt, dd];
+  }
+  function hoja(d, codigo) {
+    var box = document.getElementById('hoja'), dl = document.createElement('dl');
+    var h = document.createElement('h2'); h.textContent = 'Hoja de ' + d.tipo.toLowerCase() + ' ' + codigo; h.style.marginTop = 0;
+    [['Fecha', new Date().toLocaleString('es-PE')], ['Proveedor', (e.razonSocial || '[razón social]') + ', RUC ' + (e.ruc || '[RUC]')], ['Dirección', e.domicilio || '[domicilio]'],
+     ['Consumidor', d.nombre], ['Documento', d.tipoDoc + ' ' + d.numDoc], ['Domicilio', d.domicilio], ['Teléfono', d.telefono], ['Correo', d.correo], ['Apoderado', d.apoderado],
+     ['Bien', d.tipoBien + ': ' + d.descripcion], ['Monto', d.monto ? 'S/ ' + d.monto : ''], [d.tipo, d.detalle], ['Pedido', d.pedido], ['Respuesta del proveedor', 'Pendiente']
+    ].forEach(function (f) { dl.append.apply(dl, fila(f[0], f[1])); });
+    var print = document.createElement('button'); print.type = 'button'; print.className = 'btn btn--line'; print.textContent = 'Imprimir o guardar PDF';
+    print.onclick = function () { window.print(); };
+    box.replaceChildren(h, dl, print);
+    if (!activo) { var m = document.createElement('p'); m.textContent = 'MUESTRA: esta hoja no se registró.'; box.insertBefore(m, dl); }
+    box.hidden = false; box.scrollIntoView({ behavior: 'smooth' });
+  }
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var d = Object.fromEntries(new FormData(form));
+    if (!activo) { if (local) hoja(d, 'MUESTRA-000001'); return; }
+    var btn = document.getElementById('enviar'); btn.disabled = true; estado.hidden = true;
+    fetch(e.reclamosEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d) })
+      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+      .then(function (r) { if (!r.codigo) throw new Error(); hoja(d, r.codigo); form.reset(); })
+      .catch(function () { estado.hidden = false; estado.textContent = 'No se pudo registrar. Tus datos siguen en el formulario; inténtalo de nuevo.'; })
+      .then(function () { btn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>

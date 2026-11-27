@@ -16,6 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="assets/planes.css">
+<link rel="stylesheet" href="assets/legal.css">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -35,6 +37,7 @@
       <a href="#modulos">Módulos</a>
       <a href="#control">Control</a>
       <a href="#porque">Por qué DACONIX</a>
+      <a href="#planes">Planes</a>
     </nav>
     <div class="nav__cta">
       <a class="btn btn--ghost btn--sm" href="https://daconix-os.onrender.com/login" rel="noopener">Ingresar</a>
@@ -43,7 +46,7 @@
     <button class="nav__burger" aria-label="Abrir menú" aria-expanded="false" id="burger"><span></span><span></span></button>
   </div>
   <div class="nav__sheet" id="sheet" hidden>
-    <a href="#cine">Véalo operar</a><a href="#simulador">Simulador</a><a href="#reportes">Reportes</a><a href="#modulos">Módulos</a><a href="#control">Control</a><a href="#porque">Por qué DACONIX</a>
+    <a href="#cine">Véalo operar</a><a href="#simulador">Simulador</a><a href="#reportes">Reportes</a><a href="#modulos">Módulos</a><a href="#control">Control</a><a href="#porque">Por qué DACONIX</a><a href="#planes">Planes</a>
     <a class="btn btn--ink js-wa" data-msg="Hola, quiero agendar una demo ejecutiva de DACONIX OS." href="#">Agendar demo ejecutiva</a>
   </div>
 </header>
@@ -421,6 +424,69 @@
   </div>
 </section>
 
+<!-- ============ PLANES ============ -->
+<section class="plans-sec" id="planes">
+  <div class="wrap">
+    <div class="sechead">
+      <p class="eyebrow">Planes</p>
+      <h2 class="h2">Del primer comprobante <em>al cierre contable.</em></h2>
+    </div>
+    <div class="pl-period" role="radiogroup" aria-label="Periodo de pago">
+      <button type="button" role="radio" aria-checked="true" data-p="month">Mensual</button>
+      <button type="button" role="radio" aria-checked="false" data-p="year">Anual, 2 meses gratis</button>
+    </div>
+    <div class="pl-grid">
+      <article class="pl">
+        <h3>Emprende</h3>
+        <p class="pl__who">Para empezar a ordenar tus ventas.</p>
+        <p class="pl__price"><span>S/</span><b class="pl__num" data-month="59">59</b><small class="pl__per">al mes</small></p>
+        <ul><li>1 usuario</li><li>Ventas</li><li>Cotizaciones e impresión</li></ul>
+        <a class="btn btn--line btn--block pl__go" data-plan="0" target="_blank" rel="noopener" href="https://wa.me/51999707530?text=Hola%2C%20quiero%20contratar%20el%20plan%20Emprende%20mensual%20de%20DACONIX%20OS.">Contratar Emprende</a>
+      </article>
+      <article class="pl pl--night">
+        <h3>Negocio</h3>
+        <p class="pl__who">Para un equipo con almacén y caja.</p>
+        <p class="pl__price"><span>S/</span><b class="pl__num" data-month="129">129</b><small class="pl__per">al mes</small></p>
+        <ul><li>5 usuarios</li><li>Todo lo de Emprende</li><li>Inventario y caja</li></ul>
+        <a class="btn btn--gold btn--block pl__go" data-plan="1" target="_blank" rel="noopener" href="https://wa.me/51999707530?text=Hola%2C%20quiero%20contratar%20el%20plan%20Negocio%20mensual%20de%20DACONIX%20OS.">Contratar Negocio</a>
+      </article>
+      <article class="pl">
+        <h3>Empresa</h3>
+        <p class="pl__who">Para operar y controlar desde un solo libro.</p>
+        <p class="pl__price"><span>S/</span><b class="pl__num" data-month="249">249</b><small class="pl__per">al mes</small></p>
+        <ul><li>Usuarios ampliados</li><li>Todo lo de Negocio</li><li>Contabilidad y reportes</li></ul>
+        <a class="btn btn--line btn--block pl__go" data-plan="2" target="_blank" rel="noopener" href="https://wa.me/51999707530?text=Hola%2C%20quiero%20contratar%20el%20plan%20Empresa%20mensual%20de%20DACONIX%20OS.">Contratar Empresa</a>
+      </article>
+    </div>
+    <p class="tiny muted pl-note">Precios en soles con IGV incluido. Contratas por WhatsApp. La facturación electrónica SUNAT está en certificación y aún no se incluye. Aplican los <a href="terminos.html">términos y condiciones</a>.</p>
+  </div>
+</section>
+<script>
+(function () {
+  var sec = document.getElementById('planes'), period = 'month';
+  var local = false;
+  var names = ['Emprende', 'Negocio', 'Empresa'];
+  function links() {
+    sec.querySelectorAll('.pl__go').forEach(function (a) {
+      var i = a.dataset.plan;
+      if (local) { a.href = 'pago.html?plan=' + i + '&periodo=' + period; a.removeAttribute('target'); a.textContent = 'Elegir ' + names[i]; }
+      else a.href = 'https://wa.me/51999707530?text=' + encodeURIComponent('Hola, quiero contratar el plan ' + names[i] + (period === 'year' ? ' anual' : ' mensual') + ' de DACONIX OS.');
+    });
+  }
+  sec.querySelectorAll('.pl-period button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      period = b.dataset.p;
+      var year = period === 'year';
+      sec.querySelectorAll('.pl-period button').forEach(function (x) { x.setAttribute('aria-checked', x === b); });
+      sec.querySelectorAll('.pl__num').forEach(function (n) { n.textContent = (n.dataset.month * (year ? 10 : 1)).toLocaleString('en-US'); });
+      sec.querySelectorAll('.pl__per').forEach(function (n) { n.textContent = year ? 'al año' : 'al mes'; });
+      links();
+    });
+  });
+  links();
+})();
+</script>
+
 <!-- ============ IMPLEMENTACION ============ -->
 <section class="impl">
   <div class="wrap">
@@ -439,7 +505,7 @@
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="faq">
+<section class="faq" id="faq">
   <div class="wrap faq__grid">
     <div>
       <p class="eyebrow">Preguntas de directorio</p>
@@ -472,17 +538,36 @@
 </section>
 </main>
 
-<footer class="foot">
-  <div class="wrap foot__in">
-    <a class="brand" href="#top"><svg class="brand__mark" viewBox="0 0 115.26 138.92" aria-hidden="true"><path d="M0 100L0 0L29.51 0L29.51 100Z" fill="currentColor"/><path d="M36.92 0L55.81 0Q74.27 0 87.57 5.81Q100.87 11.63 108.07 22.82Q115.26 34.01 115.26 50Q115.26 66.13 108.07 77.25Q100.87 88.37 87.57 94.19Q74.27 100 55.81 100L36.92 100L36.92 78.05L54.07 78.05Q67.88 78.05 76.38 71.08Q84.88 64.1 84.88 51.6L84.88 48.26Q84.88 35.9 76.38 28.92Q67.88 21.95 54.07 21.95L36.92 21.95Z" fill="currentColor"/><path d="M0 114.83H115.26V124.09H0Z" fill="var(--gold)"/><path d="M0 129.65H115.26V138.92H0Z" fill="var(--gold)"/></svg><span>DACONIX<b>OS</b></span></a>
-    <p>Plataforma de gestión empresarial · Lima, Perú</p>
-    <p><a class="js-wa" data-msg="Hola, quiero información de DACONIX OS." href="#">WhatsApp +51 999 707 530</a></p>
-    <p class="muted tiny">Las pantallas y cifras de esta página son ilustrativas, con datos de ejemplo.</p>
+<footer class="bigfoot">
+  <div class="wrap">
+    <a class="bigfoot__brand" href="#top" aria-label="DACONIX OS, inicio"><svg class="brand__mark" viewBox="0 0 115.26 138.92" aria-hidden="true"><path d="M0 100L0 0L29.51 0L29.51 100Z" fill="currentColor"/><path d="M36.92 0L55.81 0Q74.27 0 87.57 5.81Q100.87 11.63 108.07 22.82Q115.26 34.01 115.26 50Q115.26 66.13 108.07 77.25Q100.87 88.37 87.57 94.19Q74.27 100 55.81 100L36.92 100L36.92 78.05L54.07 78.05Q67.88 78.05 76.38 71.08Q84.88 64.1 84.88 51.6L84.88 48.26Q84.88 35.9 76.38 28.92Q67.88 21.95 54.07 21.95L36.92 21.95Z" fill="currentColor"/><path d="M0 114.83H115.26V124.09H0Z M0 129.65H115.26V138.92H0Z" fill="#E2A93B"/></svg><span>DACONIX <b>OS</b></span></a>
+    <div class="bigfoot__grid">
+      <div><h3>Producto</h3><ul><li><a href="#cine" >Véalo operar</a></li><li><a href="#simulador" >Simulador</a></li><li><a href="#reportes" >Reportes</a></li><li><a href="#modulos" >Módulos</a></li><li><a href="#control" >Control y seguridad</a></li></ul></div>
+      <div><h3>Planes</h3><ul><li><a href="#planes" >Emprende</a></li><li><a href="#planes" >Negocio</a></li><li><a href="#planes" >Empresa</a></li><li><a href="https://daconix-os.onrender.com/login" rel="noopener">Ingresar al sistema</a></li></ul></div>
+      <div><h3>Ayuda</h3><ul><li><a href="#faq" >Preguntas frecuentes</a></li><li><a href="#porque" >Por qué DACONIX</a></li><li><a href="https://wa.me/51999707530?text=Hola%2C%20quiero%20agendar%20una%20demo%20ejecutiva%20de%20DACONIX%20OS." target="_blank" rel="noopener">Agendar demo</a></li><li><a href="https://wa.me/51999707530?text=Hola%2C%20tengo%20una%20consulta%20sobre%20DACONIX%20OS." target="_blank" rel="noopener">Soporte por WhatsApp</a></li></ul></div>
+      <div><h3>Legal</h3><ul><li><a href="terminos.html" >Términos y condiciones</a></li><li><a href="privacidad.html" >Política de privacidad</a></li><li><a href="cookies.html" >Política de cookies</a></li><li><a href="reclamaciones.html" >Libro de Reclamaciones</a></li></ul></div>
+      <div class="bigfoot__about">
+        <p>DACONIX OS es un ERP que une ventas, compras, inventario, caja, bancos y contabilidad sobre los mismos movimientos, en soles.</p>
+        <p><a href="https://wa.me/51999707530?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20DACONIX%20OS." target="_blank" rel="noopener">WhatsApp +51 999 707 530</a></p>
+        <a class="libro" href="reclamaciones.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 5.5c3-1.4 6-1.4 9 .6 3-2 6-2 9-.6v13c-3-1.4-6-1.4-9 .6-3-2-6-2-9-.6z"/><path d="M12 6v13"/></svg>
+          <span>Libro de<br><b>Reclamaciones</b></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="bigfoot__base">
+    <div class="wrap">
+      <p>© 2026 DACONIX OS. <span class="dato" data-empresa="razonSocial">[completar: razón social]</span>, RUC <span class="dato" data-empresa="ruc">[completar: RUC]</span>. Hecho en Lima, Perú.</p>
+      <p>Las pantallas y cifras de este sitio son ilustrativas, con datos de ejemplo.</p>
+    </div>
   </div>
 </footer>
 
 <a class="wafab js-wa" data-msg="Hola, quiero información de DACONIX OS." href="#" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.7-1.2 2.2 2.2 0 00.2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg></a>
 
+<script src="assets/empresa.js"></script>
+<script src="assets/legal.js"></script>
 <script src="assets/app.js" defer></script>
 <script src="assets/cinema.js" defer></script>
 </body>
